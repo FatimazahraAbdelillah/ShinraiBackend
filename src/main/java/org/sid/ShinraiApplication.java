@@ -3,16 +3,12 @@ package org.sid;
 import org.sid.dao.*;
 import org.sid.entities.*;
 import org.sid.metier.IBanqueMetier;
-import org.sid.service.AccountService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.stream.Stream;
 
 @SpringBootApplication
 public class ShinraiApplication {
@@ -22,17 +18,8 @@ public class ShinraiApplication {
     }
     @Bean
     CommandLineRunner start (ClientRepository clientRepository, CompteRepository compteRepository,
-                             OperationRepository operationRepository, IBanqueMetier banqueMetier,
-                             AppUserRepository appUserRepository,AppRoleRepository appRoleRepository,AccountService accountService) {
+                             OperationRepository operationRepository, IBanqueMetier banqueMetier) {
         return args->{
-            appUserRepository.deleteAll();
-            appRoleRepository.deleteAll();
-            accountService.save(new AppRole(null,"USER"));
-            accountService.save(new AppRole(null,"ADMIN"));
-            Stream.of("user1","user2","user3","admin").forEach( ac  ->{
-                accountService.saveUser(ac,"fatimazahra.abdelillah@gmail.com","1234","1234");
-            });
-            accountService.addRoleToUser("admin","ADMIN");
             clientRepository.deleteAll();
             compteRepository.deleteAll();
             operationRepository.deleteAll();
@@ -49,9 +36,5 @@ public class ShinraiApplication {
             banqueMetier.verser("c2",100);
 
         };
-    }
-    @Bean
-    BCryptPasswordEncoder getBCPE(){
-        return new BCryptPasswordEncoder();
     }
 }
