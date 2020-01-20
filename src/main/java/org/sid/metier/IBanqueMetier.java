@@ -11,5 +11,4 @@ public interface IBanqueMetier {
     public void verser(String codeCompte,double montant);
     public void retirer(String codeCompte,double montant);
     public void virement(String codeCpte1, String codeCpte2, double montant);
-    public Collection<Operation> listOperation(String codeCompte);
 }

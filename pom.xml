@@ -23,16 +23,16 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-mongodb</artifactId>
         </dependency>
-        <dependency>
+     <!--   <dependency>
             <groupId>org.keycloak</groupId>
             <artifactId>keycloak-spring-boot-2-adapter</artifactId>
             <version>8.0.1</version>
-        </dependency>
-        <dependency>
+        </dependency>-->
+      <!--  <dependency>
             <groupId>org.keycloak</groupId>
             <artifactId>keycloak-spring-boot-starter</artifactId>
             <version>8.0.1</version>
-        </dependency>
+        </dependency>-->
    <!--     <dependency>
             <groupId>com.auth0</groupId>
             <artifactId>java-jwt</artifactId>
@@ -73,23 +73,27 @@
                 </exclusion>
             </exclusions>
         </dependency>
-<!--      <dependency>
-            <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-test</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-core</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-web</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-security</artifactId>
-        </dependency>-->
+        <!--    <dependency>
+             <groupId>org.springframework.boot</groupId>
+             <artifactId>spring-boot-starter-security</artifactId>
+         </dependency>
+            <dependency>
+                     <groupId>org.springframework.security</groupId>
+                     <artifactId>spring-security-test</artifactId>
+                     <scope>test</scope>
+                 </dependency>
+                 <dependency>
+                     <groupId>org.springframework.security</groupId>
+                     <artifactId>spring-security-core</artifactId>
+                 </dependency>
+                 <dependency>
+                     <groupId>org.springframework.security</groupId>
+                     <artifactId>spring-security-web</artifactId>
+                 </dependency>
+                 <dependency>
+                     <groupId>org.springframework.boot</groupId>
+                     <artifactId>spring-boot-starter-security</artifactId>
+                 </dependency>-->
     </dependencies>
 
     <build>

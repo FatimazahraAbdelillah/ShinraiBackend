@@ -11,7 +11,11 @@ import org.springframework.data.domain.Sort;
 import org.springframework.data.querydsl.QPageRequest;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.Mapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
+import java.awt.*;
 import java.util.Collection;
 import java.util.Date;
 import java.util.Optional;
@@ -59,9 +63,4 @@ public class IBanqueMetierImpl implements IBanqueMetier {
         verser(codeCpte2,montant);
     }
 
-    @Override
-    public Collection<Operation> listOperation(String codeCompte) {
-        Collection<Operation> operations = operationRepository.listOperation(codeCompte);
-        return operations;
-    }
 }
