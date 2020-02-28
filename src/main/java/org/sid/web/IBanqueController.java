@@ -4,7 +4,6 @@ import org.sid.metier.IBanqueMetier;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-@CrossOrigin("*")
 @RestController
 @RequestMapping("/saveoperation")
 public class IBanqueController {
@@ -15,6 +14,7 @@ public class IBanqueController {
        iBanqueMetier.retirer(codeCompte,montant);
         iBanqueMetier.verser(codeCpte2,montant);
     }
+    @CrossOrigin("*")
     @RequestMapping(value = "/versement/{codeCompte}/{montant}",method = RequestMethod.POST)
     public void versement(@PathVariable String codeCompte, @PathVariable  double montant) {
         iBanqueMetier.verser(codeCompte,montant);
